@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,4 +37,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
+
+    public function profile(){
+        return $this->belongsTo('App\Profile');
+    }
+
+    public function setPasswordAttribute($password) {
+        if(!empty($password)) {
+           // $this->attributes['password'] = bcrypt($password);
+            $this->attributes['password'] = Hash::make($password);
+        }
+    }
+
+    public function isAdmin() {
+        if($this->role->name== "administrator" && $this->isActive()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isActive() {
+        if($this->is_active == 1) {
+            return true;
+        }
+        return false;
+    }
 }

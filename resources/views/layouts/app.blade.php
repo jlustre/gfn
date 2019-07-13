@@ -1,80 +1,66 @@
+<?php //require_once(resource_path('views').'/templates/headers/opening.blade.php'); ?>
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html><!--<![endif]-->
+<?php $root=$_SERVER['DOCUMENT_ROOT']; 
+      //$subfolder="/vendroid";
+      $subfolder="";
+      $site="http://localhost/vendroid/"; // not used, for future development 
+?>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- Specific Page Data -->
+@yield('page_data') 
+<!-- End of Data -->
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+<!-- Specific Page Data -->
+@yield('specific_css') 
+<!-- End of Data -->
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+<?php require(resource_path('views').'/templates/headers/'.$header.'.blade.php'); ?>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<div class="content">
+  <div class="container">
+    <!-- Start Left Sidebar -->
+    @yield('sidebar_left') 
+    <!-- End Left Sidebar -->
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- Start Right Sidebar -->
+    @yield('sidebar_right') 
+    <!-- End Right Sidebar -->
+    
+    <!-- Start Middle Content -->
+    <div class="vd_content-wrapper">
+      <div class="vd_container">
+        <div class="vd_content clearfix">
+          <!-- Start Right Sidebar -->
+            @yield('breadcrumb') 
+          <!-- End Right Sidebar -->
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+          <!-- Start Right Sidebar -->
+            @yield('title_header') 
+          <!-- End Right Sidebar -->
+          
+          <div class="vd_content-section clearfix">
+             @yield('content') 
+          </div> <!-- .vd_content-section --> 
 
-                    </ul>
+        </div> <!-- .vd_content --> 
+      </div> <!-- .vd_container --> 
+    </div> <!-- .vd_content-wrapper --> 
+    <!-- End Middle Content --> 
+    
+  </div>
+  <!-- .container --> 
+</div>
+<!-- .content -->
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
-                                </a>
+<?php require_once(resource_path('views').'/templates/footers/'.$footer.'.blade.php'); ?>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+<!-- Specific Page Scripts Put Here -->
+@yield('page_script')
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- Specific Page Scripts END -->
+<?php require_once(resource_path('views').'/templates/footers/closing.blade.php'); ?>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
-</html>
+
