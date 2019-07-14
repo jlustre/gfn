@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//This will make only admin users to access the admin pages
+Route::group(['middleware'=>'admin'], function(){
+	Route::resource('admin/users', 'AdminUsersController');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile/{id}', 'ProfileController@show');

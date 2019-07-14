@@ -9,7 +9,7 @@
 
 @if(session('msg_success')) 
 <!-- Success Alert -->
-	<div class="alert alert-success alert-dismissible fade show">
+	<div class="alert alert-success alert-dismissible" style="color: green;  display: block;">
 	    <strong>Success!</strong> {{ session('msg_success') }}.
 	    <button type="button" class="close" data-dismiss="alert">&times;</button>
 	</div>

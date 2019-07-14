@@ -6,9 +6,7 @@
 
 @section('specific_css')
 	<!-- Specific Page Data -->
-	<?php $title = 'Multipurpose Dashboard - Responsive Multipurpose Admin Templates'; ?>
-	<?php $keywords = 'HTML5 Template, CSS3, All Purpose Admin Template, '; ?>
-	<?php $description = 'Responsive Admin Template for multipurpose use'; ?>
+	<?php $title = 'Dashboard'; ?>
 	<?php $page = 'dashboard';   // To set active on the same id of primary menu ?>
 	<?php 
 	    // Additional Specific CSS 
@@ -19,21 +17,7 @@
 	<!-- End of Data -->
 @endsection
 
-@section('sidebar_left')
-    <?php if ($navbar_left_config != 0) { $current_navbar="vd_navbar-left"; require(resource_path('views').'/templates/navbars/'.$navbar_left.'.blade.php'); }?>
-@endsection
-
-@section('sidebar_right')
-    <?php if ($navbar_right_config != 0) { $current_navbar="vd_navbar-right"; require(resource_path('views').'/templates/navbars/'.$navbar_right.'.blade.php'); }?>
-@endsection
-
-@section('breadcrumb')
-    <?php include(resource_path('views').'/templates/widgets/head-section.blade.php'); ?> 
-@endsection
-
-@section('title_header')
-     <?php include(resource_path('views').'/templates/widgets/title-section.blade.php'); ?>  
-@endsection
+@include('includes.headers_sidebars')
 
 @section('content')
 <?php //include(resource_path('views').'/templates/widgets/interactive-stats-section.blade.php'); ?>

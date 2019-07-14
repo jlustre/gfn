@@ -20,7 +20,7 @@
                                                  
     </div>
 	<div class="navbar-menu clearfix">
-    	<h3 class="menu-title hide-nav-medium hide-nav-small"><a href="email-compose.php" class="btn vd_btn vd_bg-red"><span class="append-icon"><i class="icon-feather"></i></span>Compose Email</a></h3>
+    	<h3 class="menu-title hide-nav-medium hide-nav-small"><a href="/admin/dashboard" class="btn vd_btn vd_bg-red"><span class="append-icon"><i class="fa fa-dashboard"></i></span>Dashboard</a></h3>
         <div class="vd_menu">
             <?php include(resource_path('views')."/templates/navbars/menu-email.blade.php") ?>  
         </div>  

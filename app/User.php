@@ -2,10 +2,12 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
+use App\Role;
+use App\Profile;
 
 class User extends Authenticatable
 {
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'sponsor','username','firstname','lastname', 'email', 'password',
+        'sponsor','username','firstname','lastname', 'email', 'password', 'role_id', 'is_active'
     ];
 
     /**
@@ -43,7 +45,7 @@ class User extends Authenticatable
     }
 
     public function profile(){
-        return $this->belongsTo('App\Profile');
+        return $this->hasOne('App\Profile');
     }
 
     public function setPasswordAttribute($password) {
@@ -54,7 +56,7 @@ class User extends Authenticatable
     }
 
     public function isAdmin() {
-        if($this->role->name== "administrator" && $this->isActive()) {
+        if($this->role->name== "administrator") {
             return true;
         }
         return false;

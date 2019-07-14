@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -45,7 +46,10 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $pagetitle = 'User Profile';
+        $subtitle =$user->email;
+        return view('profile.show', compact('pagetitle', 'subtitle'))->with('user',$user);
     }
 
     /**
