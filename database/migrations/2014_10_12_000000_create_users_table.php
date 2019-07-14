@@ -21,10 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->integer('role_id');
             $table->integer('is_active');
-            $table->timestamp('deleted_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
 
@@ -42,6 +42,7 @@ class CreateUsersTable extends Migration
             $table->integer('picture_id')->nullable();
             $table->integer('country_id')->nullable();
             $table->integer('timezone_id')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
 
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
