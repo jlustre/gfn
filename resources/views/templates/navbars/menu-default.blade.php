@@ -44,7 +44,24 @@
                 </li>                                                                                                  
             </ul>   
       	</div>
-    </li>  
+    </li>
+    <li>
+        <a href="javascript:void(0);" data-action="click-trigger">
+            <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+            <span class="menu-text">Manage</span>  
+            <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+        </a>
+        <div class="child-menu"  data-action="click-target">
+            <ul>
+                <li>
+                    <a href="/manage/todo">
+                        <span class="menu-text">My Todo List</span>  
+                    </a>
+                </li>              
+                                                                                                                 
+            </ul>   
+        </div>
+    </li>   
  	 
     <li>
     	<a href="#">

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use App\Role;
 use App\Profile;
+use App\Todo;
 
 class User extends Authenticatable
 {
@@ -46,6 +47,10 @@ class User extends Authenticatable
 
     public function profile(){
         return $this->hasOne('App\Profile');
+    }
+
+    public function todos(){
+        return $this->hasMany('App\Todo');
     }
 
     public function setPasswordAttribute($password) {

@@ -21,7 +21,7 @@
            <div data-rel="scroll">
                <ul class="list-wrapper">
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar.jpg'); ?>"></div> 
                          </a>
                         <div class="menu-text"> Gabriella Montagna
                             <div class="menu-info">
@@ -39,7 +39,7 @@
                      </li>
                     <li class="warning"> 
                     		<a href="#"> 
-                    			<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-2.jpg"></div>  
+                    			<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-2.jpg'); ?>"></div>  
                             </a>                            
                             <div class="menu-text">  Jonathan Fuzzy
                             	<div class="menu-info">
@@ -56,7 +56,7 @@
                             </div> 
                      </li>    
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-3.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-3.jpg'); ?>"></div> 
                          </a>    
                         <div class="menu-text">  Sakura Hinata
                             <div class="menu-info">
@@ -73,7 +73,7 @@
                         </div> 
                     </li>                                     
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-4.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-4.jpg'); ?>"></div> 
                          </a>    
                         <div class="menu-text">  Rikudou Sennin
                             <div class="menu-info">
@@ -90,7 +90,7 @@
                         </div> 
                     </li> 
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-5.jpg"></div>  
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-5.jpg'); ?>"></div>  
                          </a>   
                         <div class="menu-text">  Kim Kardiosun
                             <div class="menu-info">
@@ -107,7 +107,7 @@
                         </div> 
                      </li>
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-6.jpg"></div>
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-6.jpg'); ?>"></div>
                          </a>    
                         <div class="menu-text">   Brad Pita
                             <div class="menu-info">
@@ -124,7 +124,7 @@
                         </div> 
                     </li>                                     
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-7.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-7.jpg'); ?>"></div> 
                          </a>   
                         <div class="menu-text">  Celline Dior
                             <div class="menu-info">
@@ -141,7 +141,7 @@
                         </div> 
                     </li> 
                     <li> <a href="#"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-8.jpg"></div>
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-8.jpg'); ?>"></div>
                          </a>    
                         <div class="menu-text">  Goerge Bruno Marz
                             <div class="menu-info">
@@ -186,7 +186,7 @@
            	   <div  data-rel="scroll">	
                <ul class="list-wrapper pd-lr-10">
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar.jpg'); ?>"></div> 
                             <div class="menu-text"> Do you play or follow any sports?
                             	<div class="menu-info">
                                     <span class="menu-date">12 Minutes Ago </span>                                                                         
@@ -199,7 +199,7 @@
                             </div> 
                     </li>
                     <li class="warning"> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-2.jpg"></div>  
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-2.jpg'); ?>"></div>  
                             <div class="menu-text">  Good job mate !
                             	<div class="menu-info">
                                     <span class="menu-date">1 Hour 20 Minutes Ago </span>                                                                         
@@ -212,7 +212,7 @@
                             </div> 
                      </li>    
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-3.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-3.jpg'); ?>"></div> 
                             <div class="menu-text">  Just calm down babe, everything will work out.
                             	<div class="menu-info">
                                     <span class="menu-date">12 Days Ago</span>                                                                         
@@ -225,7 +225,7 @@
                             </div> 
                     </li>                                     
                     <li>
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-4.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-4.jpg'); ?>"></div> 
                             <div class="menu-text">  Euuh so gross....
                             	<div class="menu-info">
                                     <span class="menu-date">19 Days Ago</span>                                                                         
@@ -238,7 +238,7 @@
                             </div> 
                     </li> 
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-5.jpg"></div>  
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-5.jpg'); ?>"></div>  
                             <div class="menu-text">  That's the way.. I like it :D
                             	<div class="menu-info">
                                     <span class="menu-date">20 Days Ago</span>                                                                         
@@ -251,7 +251,7 @@
                             </div> 
                      </li>
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-6.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-6.jpg'); ?>"></div> 
                             <div class="menu-text">  Oooh don't be shy ;P
                             	<div class="menu-info">
                                     <span class="menu-date">21 Days Ago</span>                                                                         
@@ -264,7 +264,7 @@
                             </div> 
                      </li>                                     
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-7.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-7.jpg'); ?>"></div> 
                             <div class="menu-text">  Hello, please call my number..
                             	<div class="menu-info">
                                     <span class="menu-date">24 Days Ago</span>                                                                         
@@ -277,7 +277,7 @@
                             </div> 
                     </li> 
                     <li> 
-                    		<div class="menu-icon"><img alt="example image" src="img/avatar/avatar-8.jpg"></div> 
+                    		<div class="menu-icon"><img alt="example image" src="<?php echo asset('img/avatar/avatar-8.jpg'); ?>"></div> 
                             <div class="menu-text">  Don't go anywhere, i will be coming soon
                             	<div class="menu-info">
                                     <span class="menu-date">1 Month 2 days Ago</span>                                                                         
@@ -345,7 +345,7 @@
                             </div> 
                     </a> </li> 
                     <li> <a href="#"> 
-                    		<div class="menu-icon vd_green"><img alt="example image" src="img/avatar/avatar.jpg"></div> 
+                    		<div class="menu-icon vd_green"><img alt="example image" src="<?php echo asset('img/avatar/avatar.jpg'); ?>"></div> 
                             <div class="menu-text">  Change Profile Pic
                             	<div class="menu-info"><span class="menu-date">20 Days Ago</span></div>                              
                             </div> 
@@ -363,7 +363,7 @@
                             </div> 
                     </a> </li> 
                     <li> <a href="#"> 
-                    		<div class="menu-icon vd_green"><img alt="example image" src="img/avatar/avatar.jpg"></div> 
+                    		<div class="menu-icon vd_green"><img alt="example image" src="<?php echo asset('img/avatar/avatar.jpg'); ?>"></div> 
                             <div class="menu-text">  Change Profile Pic
                             	<div class="menu-info"><span class="menu-date">20 Days Ago</span></div>                              
                             </div> 
@@ -426,7 +426,7 @@
                 <i class="fa fa-comments"></i> 
             </span> 
 <!--            <span  class="mega-image">
-                <img src="img/avatar/avatar.jpg" alt="example image" />               
+                <img src="<?php echo asset('img/avatar/avatar.jpg'); ?>" alt="example image" />               
             </span> -->           
 			<span class="badge vd_bg-red">8</span>               
         </a>              

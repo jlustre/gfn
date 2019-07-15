@@ -20,7 +20,10 @@ Route::group(['middleware'=>'admin'], function(){
 	Route::resource('admin/users', 'AdminUsersController');
 });
 
+Route::resource('api/todos', 'TodosController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{id}', 'ProfileController@show');
+Route::get('/manage/todo', 'TodosManagerController@index');
