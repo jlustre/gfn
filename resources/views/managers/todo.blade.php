@@ -217,50 +217,6 @@
 			    } );
 			}	
 			
-			/*function getTodos2() {
-				$.ajax({
-					url: 'http://gofree.test/api/todos'
-				}).done(function(todos){
-					let output = '';
-					$.each(todos, function(key, todo){
-						output += `
-							<tr style="font-size: 12px;" class="py-0">
-								<td>${todo.id}</td>
-								<td>${todo.title}</td>
-								<td>${todo.description}</td>
-								<td>status</td>
-								<td>priority</td>
-								<td>target_date</td>
-								<td>Resource</td>
-								<td></td>
-								<td></td>
-								<td class="menu-action">
-									<a href="/admin/users/${todo.id}" data-original-title="view" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-green vd_green"> <i class="fa fa-eye"></i> 
-									</a> 
-									<a href="/admin/users/${todo.id}/edit" data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> 
-									</a> 
-									<a href="/admin/users/${todo.id}" onclick="event.preventDefault(); document.getElementById('delete-form[]').submit();" data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-red vd_red"> <i class="fa fa-times"></i> 
-									</a>
-								</td>
-							</tr>
-							
-						`;
-					});
-					$.each(todos, function(key, todo){
-						output += `
-							<li class="list-group-item">
-								<strong>TODO #${todo.id}: ${todo.title}: </strong>${todo.description} <a href="#" class="deleteLink btn btn-danger btn-sm" data-id="${todo.id}">Delete</a> <a href="#" class="editLink  btn btn-info btn-sm" data-id="${todo.id}">Edit</a>
-							</li>
-						`;
-					});
-				$('#todos').html('');
-				$('#todos').append(output);
-				$('#data-tables').dataTable().ajax.reload();
-
-
-				});
-			} *///getTodo2
-
 		}) 
 
 	</script>

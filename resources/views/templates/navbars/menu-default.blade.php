@@ -20,28 +20,7 @@
                     <a href="index.php">
                         <span class="menu-text">Default Dashboard</span>  
                     </a>
-                </li>              
-                <li>
-                    <a href="index-ecommerce.php">
-                        <span class="menu-text">E-Commerce Dashboard</span>  
-                    </a>
-                </li> 
-                <li>
-                    <a href="index-analytics.php">
-                        <span class="menu-text">Analytics Dashboard</span>  
-                    </a>
-                </li> 
-                <li>
-                    <a href="index-blogging.php">
-                        <span class="menu-text">Blogging Dashboard</span>  
-                    </a>
-                </li>  
-                <li>
-                    <a href="index-event-management.php">
-                        <span class="menu-text">Event Management Dashboard</span>  
-                        <span class="menu-badge"><span class="badge vd_bg-yellow">NEW</span></span>
-                    </a>
-                </li>                                                                                                  
+                </li>                                                           
             </ul>   
       	</div>
     </li>
@@ -55,9 +34,16 @@
             <ul>
                 <li>
                     <a href="/manage/todo">
-                        <span class="menu-text">My Todo List</span>  
+                        <span class="menu-icon"><i class="fa fa-list-ol"></i></span>
+                        <span class="menu-text">My Todos List</span>  
                     </a>
-                </li>              
+                </li>
+                <li>
+                    <a href="/manage/prospect">
+                        <span class="menu-icon"><i class="fa fa-users"></i></span>
+                        <span class="menu-text">My Prospects List</span>  
+                    </a>
+                </li>                
                                                                                                                  
             </ul>   
         </div>

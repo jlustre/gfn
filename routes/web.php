@@ -21,9 +21,11 @@ Route::group(['middleware'=>'admin'], function(){
 });
 
 Route::resource('api/todos', 'TodosController');
+Route::resource('api/prospects', 'ProspectsController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{id}', 'ProfileController@show');
 Route::get('/manage/todo', 'TodosManagerController@index');
+Route::get('/manage/prospect', 'ProspectsManagerController@index');

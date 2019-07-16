@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Role;
 use App\Profile;
 use App\Todo;
+use App\Prospect;
 
 class User extends Authenticatable
 {
@@ -51,6 +52,10 @@ class User extends Authenticatable
 
     public function todos(){
         return $this->hasMany('App\Todo');
+    }
+
+    public function prospects(){
+        return $this->hasMany('App\Prospect');
     }
 
     public function setPasswordAttribute($password) {
