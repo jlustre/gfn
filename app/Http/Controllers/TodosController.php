@@ -18,7 +18,31 @@ class TodosController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return response()->json($user->todos);
+        $data = [];
+        $data2 = [];
+        foreach($user->todos as $todo) {
+            $todo->action ='<td class="menu-action">
+                <a href="/admin/users/'.$todo->id.'" 
+                   onclick="event.preventDefault();" 
+                   data-original-title="view" data-toggle="tooltip" 
+                   data-placement="top" data-id="'.$todo->id.'" 
+                   class="viewLink btn menu-icon vd_bd-green vd_green"> <i class="fa fa-eye"></i> 
+                </a>
+                <a href="/admin/users/'.$todo->id.'/edit" 
+                    onclick="event.preventDefault();" 
+                    data-original-title="edit" data-toggle="tooltip" 
+                    data-placement="top" data-id="'.$todo->id.'" 
+                    class="editLink btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> 
+                </a>
+                <a href="/admin/users/'.$todo->id.'" onclick="event.preventDefault();" data-original-title="delete" data-toggle="tooltip" data-placement="top" data-id="'.$todo->id.'" class="deleteLink btn menu-icon vd_bd-red vd_red"> <i class="fa fa-times"></i> 
+                </a>  
+            </td>';
+            array_push($data, $todo);
+        }
+        $data2 = ['data'=>$data];
+
+        return $data2;
+       // return response()->json($user->todos);
     }
 
     /**
@@ -46,7 +70,21 @@ class TodosController extends Controller
             $todo->priority = $request->input('priority');
             $todo->comments = $request->input('comments');
             $todo->save();
-            return response()->json($todo);
+
+            $data = [];
+            $todo->action ='<td class="menu-action">
+                <a href="/admin/users/'.$todo->id.'" data-original-title="view" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-green vd_green"> <i class="fa fa-eye"></i> 
+                </a>
+                <a href="/admin/users/'.$todo->id.'/edit" data-original-title="edit" data-toggle="tooltip" data-placement="top" data-id="'.$todo->id.'" class="editLink btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> 
+                </a>
+                <a href="/admin/users/'.$todo->id.'" data-original-title="delete" data-toggle="tooltip" data-placement="top"  data-id="'.$todo->id.'" class="deleteLink btn menu-icon vd_bd-red vd_red"> <i class="fa fa-times"></i> 
+                </a> 
+            </td>';
+            $data = ['data'=>$todo];
+
+            return $data;
+
+            //return response()->json($todo);
         }
     }
 

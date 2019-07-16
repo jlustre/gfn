@@ -21,6 +21,7 @@ class CreateTodosTable extends Migration
             $table->integer('status_id')->nullable();
             $table->integer('priority')->nullable();
             $table->text('comments')->nullable();
+            $table->string('target_date')->nullable();
             $table->string('deleted_at')->nullable();
             $table->timestamps();
         });

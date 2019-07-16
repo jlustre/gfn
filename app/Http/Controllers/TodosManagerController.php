@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class TodosManagerController extends Controller
 {
@@ -14,7 +15,7 @@ class TodosManagerController extends Controller
     public function index()
     {
         $pagetitle ='My Todo List';
-        $subtitle ='TODO Summary.';
+        $subtitle ='Manage TODO List.';
         return view('managers.todo', compact('pagetitle', 'subtitle'));
     }
 

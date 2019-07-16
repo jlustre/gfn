@@ -78,7 +78,7 @@
 		</table>
 		</div> <!-- end table-responsive -->
 	@else
-		<p>You don't have anything user yet. </p> 
+		<p>You don't have any user yet. </p> 
 	@endif
 				</div> <!-- end panel-body -->
 			</div> <!-- end panel -->
