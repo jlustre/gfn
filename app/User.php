@@ -54,6 +54,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Todo');
     }
 
+    public function enagicusersaccount(){
+        return $this->hasOne('App\EnagicUsersAccount');
+    }
+
     public function prospects(){
         return $this->hasMany('App\Prospect');
     }

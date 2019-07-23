@@ -1,13 +1,13 @@
 <?php
 
 namespace App;
-use App\User;
+use App\Prospect;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Prospect extends Model
 {
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Prospect');
     }
 }

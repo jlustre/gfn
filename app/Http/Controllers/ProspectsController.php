@@ -16,19 +16,33 @@ class ProspectsController extends Controller
      */
     public function index()
     {
-        //echo "I am here at __LINE__ at file __FILE__"; exit;
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $data = [];
         $data2 = [];
         foreach($user->prospects as $prospect) {
-            //$prospect->action ='<td class="menu-action">TODO</td>';
+            $prospect->action ='<td class="menu-action">
+                <a href="/admin/users/'.$prospect->id.'" 
+                   onclick="event.preventDefault();" 
+                   data-original-title="view" data-toggle="tooltip" 
+                   data-placement="top" data-id="'.$prospect->id.'" 
+                   class="viewLink btn menu-icon vd_bd-green vd_green"> <i class="fa fa-eye"></i> 
+                </a>
+                <a href="/admin/users/'.$prospect->id.'/edit" 
+                    onclick="event.preventDefault();" 
+                    data-original-title="edit" data-toggle="tooltip" 
+                    data-placement="top" data-id="'.$prospect->id.'" 
+                    class="editLink btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> 
+                </a>
+                <a href="/admin/users/'.$prospect->id.'" onclick="event.preventDefault();" data-original-title="delete" data-toggle="tooltip" data-placement="top" data-id="'.$prospect->id.'" class="deleteLink btn menu-icon vd_bd-red vd_red"> <i class="fa fa-times"></i> 
+                </a>  
+            </td>';
             array_push($data, $prospect);
         }
         $data2 = ['data'=>$data];
 
         return $data2;
-       // return response()->json($user->prospects);
+       // return response()->json($user->todos);
     }
 
     /**
@@ -45,7 +59,7 @@ class ProspectsController extends Controller
 
         if($validator->fails()) {
             $response = array('response' => $validator->messages(), 'success' => false);
-            return $response; exit;
+            return $response; 
         } else {
             //create a prospect
             $prospect = new Prospect;
@@ -71,14 +85,18 @@ class ProspectsController extends Controller
             $prospect->country_id = $request->input('country_id');
             $prospect->timezone_id = $request->input('timezone_id');
             $prospect->other_info = $request->input('other_info');
-            //$prospect->created_at = now();
-            //$prospect->updated_at = now();
-            $prospect->save();
+            $prospect->created_at = now();
+            $prospect->updated_at = now();
+            if($prospect->save()) {
+                $data = [];
+                $data = ['data'=>$prospect];
 
-            $data = [];
-            $data = ['data'=>$prospect];
+                return $data;
+            } else {
+                console.log("ERROR: Saving new Prospect!");
+            }
 
-            return $data;
+            
             //return response()->json($prospect);
         }
     }

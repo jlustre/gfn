@@ -33,9 +33,9 @@ class CreateProspectsTable extends Migration
             $table->string('interests')->nullable();
             $table->string('birthday')->nullable();
             $table->string('city')->nullable();
-            $table->integer('state_id')->nullable();
-            $table->integer('country_id')->nullable();
-            $table->integer('timezone_id')->nullable();
+            $table->string('state_id')->nullable();
+            $table->integer('country_id')->nullable()->default(1);
+            $table->integer('timezone_id')->nullable()->default(1);
             $table->text('other_info')->nullable();
             $table->string('deleted_at')->nullable();
             $table->timestamps();

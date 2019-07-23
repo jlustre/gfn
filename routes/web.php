@@ -18,10 +18,12 @@ Route::get('/', function () {
 //This will make only admin users to access the admin pages
 Route::group(['middleware'=>'admin'], function(){
 	Route::resource('admin/users', 'AdminUsersController');
+	Route::get('/admin/enagic/accounts', 'AdminEnagicAccountsController@index');
 });
 
 Route::resource('api/todos', 'TodosController');
 Route::resource('api/prospects', 'ProspectsController');
+Route::resource('api/enagicUserAccounts', 'EnagicAccountsController');
 
 Auth::routes();
 
@@ -29,3 +31,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{id}', 'ProfileController@show');
 Route::get('/manage/todo', 'TodosManagerController@index');
 Route::get('/manage/prospect', 'ProspectsManagerController@index');
+

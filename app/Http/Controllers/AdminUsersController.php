@@ -11,6 +11,7 @@ use App\Photo;
 use App\Role;
 use App\User;
 use App\Profile;
+use App\EnagicUserAccount;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class AdminUsersController extends Controller
         $pagetitle ='Users List';
         $subtitle ='Manage all users.';
         $users = User::all();
-        
+       
         return view('admin.users.index', compact('pagetitle', 'subtitle'))->with('users', $users);
     }
 

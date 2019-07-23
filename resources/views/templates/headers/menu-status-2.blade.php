@@ -7,7 +7,7 @@
       <div class="vd_mega-menu-content width-xs-3 width-sm-4 width-md-5 right-xs left-sm" data-action="click-target">
         <div class="child-menu">  
            <div class="title"> 
-           	   Friend Requests
+           	   Friend Requests2
                <div class="vd_panel-menu">
                      <span data-original-title="Find User" data-toggle="tooltip" data-placement="bottom" class="menu">
                         <i class="fa fa-search"></i>

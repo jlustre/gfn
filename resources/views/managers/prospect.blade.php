@@ -97,11 +97,16 @@
 									</div>
 									<div class="form-group">
 										<label>Country</label>
-										<input type="text" id="country_id" name="country_id" class="form-control"/>
+										<select class=""  name="country_id" id="country_id">
+						                   <option value="1">USA</option>
+						                   <option value="2">Canada</option>
+						                </select>
 									</div>
 									<div class="form-group">
 										<label>Timezone</label>
-										<input type="text" id="timezone_id" name="timezone_id" class="form-control"/>
+										<select class=""  name="timezone_id" id="timezone_id">
+						                   <option value="1">Pacific (PST)</option>
+						                </select>
 									</div>
 									<div class="form-group">
 										<label>interests</label>
@@ -127,7 +132,9 @@
 										</textarea>
 									</div>
 									<div class="form-group">
-										<input type="submit" value="Save" class="btn btn-primary">
+										<input type="submit" value="Save" class="btn btn-success btn-sm">
+										<a id="close" href="#" class="btn btn-primary btn-sm">Close</a>
+										<a id="clear" href="#" class="btn btn-default btn-sm">Clear</a>
 									</div>
 								</div>
 							</div>
@@ -148,9 +155,13 @@
 								<th>City/Town</th>
 								<th>State/Prov</th>
 								<th>Country</th>
-							    <th>Action</th> 
+								<th>Timezone</th>
+								<th>Action</th>
 							</tr>
 						</thead>
+						<tbody>	
+						</tbody>	
+
 					</table>
 				</div> <!-- end table-responsive -->
 			</div> <!-- end panel-body -->
@@ -172,40 +183,16 @@
 			 });
 
 			getProspects();
-			
-			//Submit event
-			$('#prospectForm').on('submit', function(e){
-				e.preventDefault();
-				let id =$('#id').val();
-				let firstname = $('#firstname').val();
-				let lastname = $('#lastname').val();
-				let spousename = $('#spousename').val();
-				let is_married = $('#is_married').val();
-				let nbr_kids = $('#nbr_kids').val();
-				let source = $('#source').val();
-				let phone = $('#phone').val();
-				let alt_phone = $('#alt_phone').val();
-				let call_best_time = $('#call_best_time').val();
-				let email = $('#email').val();
-				let hot_buttons = $('#hot_buttons').val();
-				let company = $('#company').val();
-				let profession = $('#profession').val();
-				let common_ground = $('#common_ground').val();
-				let interests = $('#interests').val();
-				let birthday = $('#birthday').val();
-				let city = $('#city').val();
-				let state_id = $('#state_id').val();
-				let country_id = $('#country_id').val();
-				let other_info = $('#other_info').val();
-				if (id) {
-					updateProspect(id, firstname, lastname, spousename, is_married, nbr_kids, source, phone, alt_phone, call_best_time, email, hot_buttons, company, profession, common_ground, interests, birthday, city, state_id, country_id, timezone_id, other_info);
-				} else {
-					if(firstname=="") {
-						//do nothing
-					} else {
-						addProspect(firstname, lastname, spousename, is_married, nbr_kids, source, phone, alt_phone, call_best_time, email, hot_buttons, company, profession,common_ground, interests, birthday, city, state_id, country_id, timezone_id, other_info);
-					}
-				}
+
+			//Clear Form
+			$('body').on('click', '#clear', function(){
+				clearForm();
+			});
+
+			//Close Form
+			$('body').on('click', '#close', function(){
+				$('#addprospect').hide();
+				$('#toggle_btn').text('Add New Prospect');
 			});
 
 			//Delete event
@@ -234,6 +221,70 @@
 				let mode = 'Editing';
 				showProspect(id, mode);
 			});
+
+			//Get Prospects from API
+			function getProspects() {
+				$('#data-tables').DataTable({
+			        "ajax": "http://gofree.test/api/prospects",
+			        "columns": [
+			            { "data": "id" },
+			            { "data": "firstname" },
+			            { "data": "lastname" },
+			            { "data": "phone" },
+			            { "data": "email" },
+			            { "data": "call_best_time" },
+			            { "data": "city" },
+			            { "data": "state_id" },
+			            { "data": "country_id" },
+			            { "data": "timezone_id" },
+			            { "data": "action" },
+			        ]
+			    });
+
+			}
+
+			//Submit event
+			$('#prospectForm').on('submit', function(e){
+				e.preventDefault();
+				//console.log ('Hello');
+				let id =$('#id').val();
+				let firstname = $('#firstname').val();
+				let lastname = $('#lastname').val();
+				let spousename = $('#spousename').val();
+				let is_married = $('#is_married').val();
+				let nbr_kids = $('#nbr_kids').val();
+				let source = $('#source').val();
+				let phone = $('#phone').val();
+				let alt_phone = $('#alt_phone').val();
+				let call_best_time = $('#call_best_time').val();
+				let email = $('#email').val();
+				let hot_buttons = $('#hot_buttons').val();
+				let company = $('#company').val();
+				let profession = $('#profession').val();
+				let common_ground = $('#common_ground').val();
+				let interests = $('#interests').val();
+				let birthday = $('#birthday').val();
+				let city = $('#city').val();
+				let state_id = $('#state_id').val();
+				let country_id = $('#country_id').val();
+				let timezone_id = $('#timezone_id').val();
+				let other_info = $('#other_info').val();
+				if (id) {
+					console.log ('updateProspect');
+					updateProspect(id, firstname, lastname, spousename, is_married, nbr_kids, source, phone, alt_phone, call_best_time, email, hot_buttons, company, profession, common_ground, interests, birthday, city, state_id, country_id, timezone_id, other_info);
+				} else {
+					
+					if(firstname=="") {
+						console.log ('firstname is empty');
+						//do nothing
+					} else {
+						console.log ('addProspect');
+						addProspect(firstname, lastname, spousename, is_married, nbr_kids, source, phone, alt_phone, call_best_time, email, hot_buttons, company, profession,common_ground, interests, birthday, city, state_id, country_id, timezone_id, other_info);
+					}
+				}
+			});
+
+			
 
 			//Show Prospect using API
 			function showProspect(id, mode) {
@@ -323,6 +374,7 @@
 				$('#timezone_id').val('');
 				$('#other_info').val('');
 			}
+
 			//Delete Prospect using API
 			function deleteProspect(id) {
 				$.ajax({
@@ -358,45 +410,17 @@
 						interests: interests,
 						birthday: birthday,
 						city: city,
-						/*state_id: state_id,
+						state_id: state_id,
 						country_id: country_id,
-						timezone_id: timezone_id,*/
+						timezone_id: timezone_id,
 						other_info: other_info
 					}
 				}).done(function(prospect){
 					location.reload();
 				});
 			}
-
-			//Get Prospects from API
-			function getProspects() {
-				//alert('Prospect are shown2.');
-				$.fn.dataTable.ext.errMode = 'none';
-
-				$('#data-tables')
-				.on( 'error.dt', function ( e, settings, techNote, message ) {
-			        console.log( 'An error has been reported by DataTables: ', message );
-			    } )
-				.DataTable({
-			        "ajax": "http://gofree.test/api/prospects",
-			        "columns": [
-			            { "data": "id" },
-			            { "data": "firstname" },
-			            { "data": "lastname" },
-			            { "data": "phone" },
-			            { "data": "email" },
-			            { "data": "call_best_time" },
-			            { "data": "city" },
-			            { "data": "state_id" },
-			            { "data": "country_id" },
-			            { "data": "timezone_id" },
-			            //{ "data": "action" }
-			        ]
-			    });
-			}	
 			
-		}) 
-
+		}); 
 	</script>
 
 	<?php include(resource_path('views').'/templates/scripts/listtables-data-tables.blade.php'); ?>
