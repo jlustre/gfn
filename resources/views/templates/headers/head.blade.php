@@ -1,3 +1,4 @@
+<!-- head -->
 <head>
     <meta charset="utf-8" />
     <title><?php if (isset($title)) echo $title; ?> | <?php if (isset($website_name)) echo $website_name; ?></title>

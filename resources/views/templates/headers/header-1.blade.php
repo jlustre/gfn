@@ -1,5 +1,6 @@
 <?php require_once(resource_path('views').'/templates/headers/head.blade.php'); ?>
 
+<!-- header-1 -->
 <!-- Header Start -->
   <header class="header-1" id="header">
       <div class="vd_top-menu-wrapper">
@@ -48,7 +49,7 @@
           <div class="vd_container">
           	<div class="row">
             	<div class="col-sm-5 col-xs-12">
-            		<?php include_once(resource_path('views')."/templates/headers/menu-search.blade.php"); ?>
+            		<?php //include_once(resource_path('views')."/templates/headers/menu-search.blade.php"); ?>
                 </div>
                 <div class="col-sm-7 col-xs-12">
               		<div class="vd_mega-menu-wrapper">

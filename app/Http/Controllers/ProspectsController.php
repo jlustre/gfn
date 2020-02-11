@@ -26,15 +26,15 @@ class ProspectsController extends Controller
                    onclick="event.preventDefault();" 
                    data-original-title="view" data-toggle="tooltip" 
                    data-placement="top" data-id="'.$prospect->id.'" 
-                   class="viewLink btn menu-icon vd_bd-green vd_green"> <i class="fa fa-eye"></i> 
+                   class="viewLink btn menu-icon vd_bd-green vd_green btn-sm"> <i class="fa fa-eye"></i> 
                 </a>
                 <a href="/admin/users/'.$prospect->id.'/edit" 
                     onclick="event.preventDefault();" 
                     data-original-title="edit" data-toggle="tooltip" 
                     data-placement="top" data-id="'.$prospect->id.'" 
-                    class="editLink btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> 
+                    class="editLink btn menu-icon vd_bd-yellow vd_yellow btn-sm"> <i class="fa fa-pencil"></i> 
                 </a>
-                <a href="/admin/users/'.$prospect->id.'" onclick="event.preventDefault();" data-original-title="delete" data-toggle="tooltip" data-placement="top" data-id="'.$prospect->id.'" class="deleteLink btn menu-icon vd_bd-red vd_red"> <i class="fa fa-times"></i> 
+                <a href="/admin/users/'.$prospect->id.'" onclick="event.preventDefault();" data-original-title="delete" data-toggle="tooltip" data-placement="top" data-id="'.$prospect->id.'" class="deleteLink btn menu-icon vd_bd-red vd_red btn-sm"> <i class="fa fa-times"></i> 
                 </a>  
             </td>';
             array_push($data, $prospect);

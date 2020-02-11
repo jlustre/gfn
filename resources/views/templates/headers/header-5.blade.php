@@ -1,5 +1,5 @@
 <?php require_once(resource_path('views').'/templates/headers/head.blade.php'); ?>
-
+<!-- header-5 -->
 <!-- Header Start -->
   <header class="header-5" id="header">
       <div class="vd_top-menu-wrapper">

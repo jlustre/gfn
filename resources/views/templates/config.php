@@ -48,7 +48,7 @@
 
 /*  RIGHT SIDEBAR NAVIGATION SETTING  */
 		
-	$navbar_right_config = 1; // 2 = Available but Start Invisible, 1 = Available Start Visible, 0 = Not available
+	$navbar_right_config = 0; // 2 = Available but Start Invisible, 1 = Available Start Visible, 0 = Not available
 	$navbar_right = 'navbar-chat'; // 'navbar-tabs-menu' or 'navbar-tabs-profile' or 'navbar-tabs-tab' or 'navbar-email' or 'navbar-chat' or 'navbar-no-tab'
 	$navbar_right_start_width = ''; // '' = default width, 'nav-right-medium' = medium width, 'nav-right-small' = small width		
 	$navbar_right_fixed = 0; // Condition: for right aligned navbar, $layout must be 'full-layout',  1 = fixed position , 0 = normal, compatible with no footer layout	

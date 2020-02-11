@@ -1,6 +1,6 @@
 <?php //require_once('templates/headers/head.tpl.php'); ?>
 @include('templates.headers.head')
-
+<!-- header-front-blog -->
 <!-- Header Start -->
   <header class="header-2" id="header">
       <div class="vd_top-menu-wrapper <?php if (isset($top_menu_extra_class)) { echo($top_menu_extra_class);}?>">

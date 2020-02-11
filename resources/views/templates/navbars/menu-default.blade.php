@@ -1,3 +1,4 @@
+ <!-- menu-default -->
  <ul>
     <?php if (Auth::user()->isAdmin() && Auth::user()->isActive()) { ?>
     <li>
@@ -47,15 +48,7 @@
                                                                                                                  
             </ul>   
         </div>
-    </li>   
- 	 
-    <li>
-    	<a href="#">
-        	<span class="menu-icon"><i class="fa fa-shopping-cart"></i></span> 
-            <span class="menu-text">Buy Products</span>  
-            <span class="menu-badge"><span class="badge vd_bg-red"><i class="fa fa-exclamation"></i></span></span>
-       	</a>
-    </li>   
+    </li>     
                  
 </ul>
 <!-- Head menu search form ends --> 

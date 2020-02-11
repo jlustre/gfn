@@ -23,27 +23,31 @@
             </div>
             <div class="panel-body">
 				<div id="addtodo" style="display: none;" class="container">
-					<div class="col-md-6">
 						<form id="todoForm">
 							<input type="hidden" id="id" name="id" value="">
-							<div class="form-group">
-								<label>Title</label><span class="pull-right">ID:<span id="my_id"></span> </span>
-								<input id="title" type="text" name="title" class="form-control">
-							</div>
-							<div class="form-group">
-								<label>Description</label>
-								<input type="text" id="description" name="description" class="form-control"/>
-							</div>
-							<div class="form-group">
-								<label>Comments</label>
-								<textarea id="comments" name="comments" class="form-control">
-								</textarea>
-							</div>
-							<div class="form-group">
-								<input type="submit" value="Save" class="btn btn-primary">
-							</div>
-						</form>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Title</label><span class="pull-right">ID:<span id="my_id"></span> </span>
+							<input id="title" type="text" name="title" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Description</label>
+							<input type="text" id="description" name="description" class="form-control"/>
+						</div>
 					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label>Comments</label>
+							<textarea id="comments" name="comments" class="form-control">
+							</textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Save" class="btn btn-success btn-sm">
+							<a id="close" href="#" class="btn btn-primary btn-sm">Close</a>
+							<a id="clear" href="#" class="btn btn-default btn-sm">Clear</a>
+						</div>
+					</div>
+					</form>
 					<hr>
 				</div>
 				<div class="table-responsive">
@@ -76,7 +80,7 @@
 			$('#toggle_btn').click(function(){
 				$(this).text(function(i, text){
 				  $('#addtodo').toggle();
-		          return text === "Hide Add Todo Form" ? "Add New Todo" : "Hide Add Todo Form";
+		          return text === "Hide Todo Form" ? "Add New Todo" : "Hide Todo Form";
 		        })
 			    
 			 });
@@ -102,11 +106,22 @@
 				}
 			});
 
+			//Clear Form
+			$('body').on('click', '#clear', function(){
+				clearForm();
+			});
+
+			//Close Form
+			$('body').on('click', '#close', function(){
+				$('#addtodo').hide();
+				$('#toggle_btn').text('Add New Todo');
+			});
+
 			//Delete event
 			$('body').on('click', '.viewLink', function(e){
 				let id = $(this).data('id');
 				$('#addtodo').show();
-				$('#toggle_btn').text('Hide Add Todo Form');
+				$('#toggle_btn').text('Hide Todo Form');
 				let mode = 'Viewing';
 				showTodo(id, mode);
 			});
@@ -124,7 +139,7 @@
 			$('body').on('click', '.editLink', function(e){
 				let id = $(this).data('id');
 				$('#addtodo').show();
-				$('#toggle_btn').text('Hide Add Todo Form');
+				$('#toggle_btn').text('Hide Todo Form');
 				let mode = 'Editing';
 				showTodo(id, mode);
 			});
@@ -155,11 +170,7 @@
 						comments: comments,
 					}
 				}).done(function(todo){
-					alert('Todo # '+id+' was updated.');
 					location.reload();
-					//$('#todos').html('');
-					//getTodos();
-					//clearForm();
 				});
 			}
 			//clear the form
@@ -176,10 +187,7 @@
 					url: 'http://gofree.test/api/todos/'+id,
 					data: {_method: 'DELETE'}
 				}).done(function(todo){
-					alert('Todo # '+id+' was deleted.');
 					location.reload();
-					//$('#todos').html('');
-					//getTodos();
 				});
 			}
 

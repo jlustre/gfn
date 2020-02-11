@@ -177,7 +177,7 @@
 			$('#toggle_btn').click(function(){
 				$(this).text(function(i, text){
 				  $('#addprospect').toggle();
-		          return text === "Hide Add Prospect Form" ? "Add New Prospect" : "Hide Add Prospect Form";
+		          return text === "Hide Prospect Form" ? "Add New Prospect" : "Hide Prospect Form";
 		        })
 			    
 			 });
@@ -199,7 +199,7 @@
 			$('body').on('click', '.viewLink', function(e){
 				let id = $(this).data('id');
 				$('#addprospect').show();
-				$('#toggle_btn').text('Hide Add Prospect Form');
+				$('#toggle_btn').text('Hide Prospect Form');
 				let mode = 'Viewing';
 				showProspect(id, mode);
 			});
@@ -217,7 +217,7 @@
 			$('body').on('click', '.editLink', function(e){
 				let id = $(this).data('id');
 				$('#addprospect').show();
-				$('#toggle_btn').text('Hide Add Prospect Form');
+				$('#toggle_btn').text('Hide Prospect Form');
 				let mode = 'Editing';
 				showProspect(id, mode);
 			});
@@ -246,7 +246,6 @@
 			//Submit event
 			$('#prospectForm').on('submit', function(e){
 				e.preventDefault();
-				//console.log ('Hello');
 				let id =$('#id').val();
 				let firstname = $('#firstname').val();
 				let lastname = $('#lastname').val();
@@ -318,7 +317,6 @@
 
 			//Update Prospect using API
 			function updateProspect(id, firstname, lastname, spousename, is_married, nbr_kids, source, phone, alt_phone, call_best_time, email, hot_buttons, company, profession,common_ground, interests, birthday, city, state_id, country_id, timezone_id, other_info) {
-				alert('i am updating id: '+id);
 				$.ajax({
 					method: 'POST',
 					url: 'http://gofree.test/api/prospects/'+id,
@@ -346,7 +344,6 @@
 						other_info: other_info
 					}
 				}).done(function(prospect){
-					alert('Prospect # '+id+' was updated.');
 					location.reload();
 				});
 			}

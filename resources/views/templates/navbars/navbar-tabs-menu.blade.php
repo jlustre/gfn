@@ -1,3 +1,4 @@
+<!-- navbar-tabs-menu -->
 <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu <?php if (isset($current_navbar)) {echo($current_navbar);} ?> <?php if (isset($current_navbar) && $current_navbar=="vd_navbar-left") {echo($navbar_left_extra_class);} ?> <?php if (isset($current_navbar) && $current_navbar=="vd_navbar-right") {echo($navbar_right_extra_class);} ?>">
 	<div class="navbar-tabs-menu clearfix">
 			<span class="expand-menu" data-action="expand-navbar-tabs-menu">
@@ -28,7 +29,7 @@
                 <i class="fa fa-sort-amount-asc"></i>
             </span>                   
         </div>
-    	<h3 class="menu-title hide-nav-medium hide-nav-small">UI Features</h3>
+    	<!-- <h3 class="menu-title hide-nav-medium hide-nav-small">UI Features</h3> -->
         <div class="vd_menu">
         	<?php 
 			  if (isset($current_navbar) && $current_navbar=="vd_navbar-left"){
