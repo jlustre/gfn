@@ -20,6 +20,7 @@
 @include('includes.headers_sidebars')
 
 @section('content')
+<div id="app">MyApp</div>
 <?php //include(resource_path('views').'/templates/widgets/interactive-stats-section.blade.php'); ?>
 <?php //include(resource_path('views').'/templates/widgets/map-chart-section.blade.php'); ?>
 <?php //include(resource_path('views').'/templates/widgets/calendar-tabs-section.blade.php'); ?>
