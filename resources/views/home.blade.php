@@ -20,7 +20,8 @@
 @include('includes.headers_sidebars')
 
 @section('content')
-<div id="app">MyApp</div>
+	<div id="app">MyApp</div>
+	<p>The quick Brown fox jumps over the lazy dog.</p>
 <?php //include(resource_path('views').'/templates/widgets/interactive-stats-section.blade.php'); ?>
 <?php //include(resource_path('views').'/templates/widgets/map-chart-section.blade.php'); ?>
 <?php //include(resource_path('views').'/templates/widgets/calendar-tabs-section.blade.php'); ?>

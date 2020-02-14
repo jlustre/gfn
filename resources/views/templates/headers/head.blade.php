@@ -61,6 +61,7 @@
         
     <!-- Responsive CSS -->
     <link href="<?php echo asset('css/theme-responsive.min.css'); ?>" rel="stylesheet" type="text/css"> 
+
     <!-- for specific page in style css -->
     <?php if (isset($page_css)) { ?>
 		<style>
@@ -68,6 +69,7 @@
 		</style>
 	<?php }?>
     
+    <!-- <link href="<?php echo asset('css/app.css'); ?>" rel="stylesheet" type="text/css"> -->
     <!-- Custom CSS -->
     <link href="<?php echo asset('custom/custom.css'); ?>" rel="stylesheet" type="text/css">
 
@@ -81,7 +83,7 @@
       <script type="text/javascript" src="<?php echo asset('js/html5shiv.js'); ?>"></script>
       <script type="text/javascript" src="<?php echo asset('js/respond.min.js'); ?>"></script>     
     <![endif]-->
-    
+    <script type="text/javascript" src="<?php echo asset('js/app.js'); ?>" defer></script>
 </head>    
 
 <body id="<?php if (isset($page)) echo $page; ?>" class="<?php  if (isset($layout)) echo $layout; ?> <?php  if (isset($navbar_left_config)) { 
